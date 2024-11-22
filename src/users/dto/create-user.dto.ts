@@ -2,10 +2,10 @@
 
 // src/users/dto/create-user.dto.ts
 export class CreateUserDto {
-    ID: string;
+    Id: number;
     Username: string;
-    Firstname: string;
-    Lastname: string;
+    FirstName: string;
+    LastName: string;
     Email: string;
     StripeCustomerId: string;
   }

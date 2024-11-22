@@ -16,10 +16,10 @@ export class UsersService {
 
   async create(createUserDto: CreateUserDto): Promise<User> {
     const user = new User();
-    user.Id = createUserDto.ID;
+    user.Id = createUserDto.Id;
     user.Username = createUserDto.Username;
-    user.FirstName = createUserDto.Firstname;
-    user.Lastname = createUserDto.Lastname;
+    user.FirstName = createUserDto.FirstName;
+    user.LastName = createUserDto.LastName;
     user.Email = createUserDto.Email;
     user.StripeCustomerId = createUserDto.StripeCustomerId;
     return await this.userRepository.save(user);
@@ -29,11 +29,11 @@ export class UsersService {
     return await this.userRepository.find();
   }
 
-  async findOne(Id: string): Promise<User> {
+  async findOne(Id: number): Promise<User> {
     return await this.userRepository.findOne({ where: { Id } });
   }
 
-  async update(Id: string, updateUserDto: UpdateUserDto): Promise<User> {
+  async update(Id: number, updateUserDto: UpdateUserDto): Promise<User> {
     const user = await this.userRepository.findOne({ where: { Id } });
     if (!user) {
       throw new NotFoundException('User not found');
@@ -42,7 +42,4 @@ export class UsersService {
     return user;
   }
 
-  async remove(Id: string): Promise<void> {
-    await this.userRepository.delete(Id);
-  }
 }
