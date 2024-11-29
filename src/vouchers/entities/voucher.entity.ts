@@ -23,6 +23,9 @@ export class Voucher {
   CreatedById : string;
 
   @Column()
+  CreatedOn : Date;
+
+  @Column()
   LastModifiedById : string;
 
   @Column()
@@ -30,6 +33,11 @@ export class Voucher {
   
   @Column()
   SubmissionId : string;
-  
 
+  @Column()
+  VoucherPrize : string;
+
+  @Column()
+  VoucherPrizeEn : string; 
+  
 }

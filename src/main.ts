@@ -1,10 +1,10 @@
 /* eslint-disable */
 
 import { NestFactory } from '@nestjs/core';
-import { UsersModule } from './users/users.module';
+import { MainModule } from './mainModule';
 
 async function bootstrap() {
-  const app = await NestFactory.create(UsersModule);
+  const app = await NestFactory.create(MainModule);
   await app.listen(process.env.PORT ?? 3000);
 }
 bootstrap();
