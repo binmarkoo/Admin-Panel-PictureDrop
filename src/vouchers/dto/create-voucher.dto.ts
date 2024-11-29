@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-// src/users/dto/create-user.dto.ts
+
 export class CreateVoucherDto {
     Id: number;
     VoucherCode: string;
