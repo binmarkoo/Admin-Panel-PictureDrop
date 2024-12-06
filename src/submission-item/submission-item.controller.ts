@@ -29,8 +29,4 @@ export class SubmissionItemController {
     return this.submissionItemService.update(+id, updateSubmissionItemDto);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.submissionItemService.remove(+id);
-  }
 }

@@ -19,8 +19,8 @@ export class SubmissionItemService {
     user.SubmissionId = createSubmissionItemDto.SubmissionId;
     user.FileId = createSubmissionItemDto.FileId;
     user.ThumbnailId = createSubmissionItemDto.ThumbnailId;
-    user.width = createSubmissionItemDto.width;
-    user.height = createSubmissionItemDto.height;
+    user.Width = createSubmissionItemDto.Width;
+    user.Height = createSubmissionItemDto.Height;
     user.ContentType = createSubmissionItemDto.ContentType;
     user.ContentLength = createSubmissionItemDto.ContentLength;
     user.Rating = createSubmissionItemDto.Rating;

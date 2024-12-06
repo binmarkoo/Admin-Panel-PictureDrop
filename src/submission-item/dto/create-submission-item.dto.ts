@@ -5,8 +5,8 @@ export class CreateSubmissionItemDto {
     SubmissionId: string;
     FileId: string;
     ThumbnailId: string;
-    width: number;
-    height: number;
+    Width: number;
+    Height: number;
     ContentType: string;
     ContentLength: number;
     Rating: number;

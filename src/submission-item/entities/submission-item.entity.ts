@@ -16,10 +16,10 @@ export class SubmissionItem {
     ThumbnailId: string;
 
     @Column()
-    width: number;
+    Width: number;
 
     @Column()
-    height: number;
+    Height: number;
 
     @Column()
     ContentType: string;

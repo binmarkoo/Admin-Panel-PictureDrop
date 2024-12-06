@@ -6,6 +6,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { User } from 'src/users/entities/user.entity';
 import { Voucher } from 'src/vouchers/entities/voucher.entity';
 import { Workspace } from 'src/workspaces/entities/workspace.entity';
+import { SubmissionItem } from 'src/submission-item/entities/submission-item.entity';
 
 @Module({
   imports: [
@@ -19,7 +20,7 @@ import { Workspace } from 'src/workspaces/entities/workspace.entity';
         username: configService.get('POSTGRES_USER'),
         password: configService.get('POSTGRES_PASSWORD'),
         database: configService.get('POSTGRES_DB'),
-        entities: [User,Voucher,Workspace],
+        entities: [User,Voucher,Workspace,SubmissionItem],
         synchronize: false,
       }),
       inject: [ConfigService],

@@ -11,11 +11,14 @@ import { VouchersService } from './vouchers/voucher.service';
 import { WorkspaceService } from './workspaces/workspaces.service';
 import { WorkspacesController } from './workspaces/workspaces.controller';
 import { Workspace } from './workspaces/entities/workspace.entity';
+import { SubmissionItemController } from './submission-item/submission-item.controller';
+import { SubmissionItemService } from './submission-item/submission-item.service';
+import { SubmissionItem } from './submission-item/entities/submission-item.entity';
 
 
 @Module({
-    imports: [TypeOrmModule.forFeature([User,Voucher,Workspace]), DatabaseModule], 
-    controllers: [UsersController,VouchersController,WorkspacesController],
-    providers: [UsersService,VouchersService,WorkspaceService],
+    imports: [TypeOrmModule.forFeature([User,Voucher,Workspace,SubmissionItem]), DatabaseModule], 
+    controllers: [UsersController,VouchersController,WorkspacesController,SubmissionItemController],
+    providers: [UsersService,VouchersService,WorkspaceService,SubmissionItemService],
   })
   export class MainModule {}
