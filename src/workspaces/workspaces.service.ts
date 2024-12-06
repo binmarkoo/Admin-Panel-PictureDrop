@@ -9,25 +9,49 @@ import { Workspace } from './entities/workspace.entity';
 import { Repository } from 'typeorm';
 
 @Injectable()
-export class VouchersService {
+export class WorkspaceService {
   constructor(
     @InjectRepository(Workspace) private workspaceRepository: Repository<Workspace>,
   ) {}
 
-  async create(createVoucherDto: CreateWorkspaceDto): Promise<Workspace> {
+  async create(createWorkspaceDto: CreateWorkspaceDto): Promise<Workspace> {
     const user = new Workspace();
-    user.Id = createVoucherDto.Id;
-    user.Name = createVoucherDto.Name;
-    user.NameEn = createVoucherDto.NameEn;
-    user.Description = createVoucherDto.Description;
-    user.DescriptionEn = createVoucherDto.DescriptionEn;
-    user.ContactUrl = createVoucherDto.ContactUrl;
-    user.ContactMail = createVoucherDto.ContactMail;
-    user.ContactPhone = createVoucherDto.ContactPhone;
-    user.FirstName = createVoucherDto.FirstName;
-    user.LastName = createVoucherDto.LastName;
-    user.DateOfBirth = createVoucherDto.DateOfBirth;
-    user.AddressLine1=createVoucherDto.AddressLine1;
+    user.Id = createWorkspaceDto.Id;
+    user.Name = createWorkspaceDto.Name;
+    user.NameEn = createWorkspaceDto.NameEn;
+    user.Description = createWorkspaceDto.Description;
+    user.DescriptionEn = createWorkspaceDto.DescriptionEn;
+    user.ContactUrl = createWorkspaceDto.ContactUrl;
+    user.ContactMail = createWorkspaceDto.ContactMail;
+    user.ContactPhone = createWorkspaceDto.ContactPhone;
+    user.FirstName = createWorkspaceDto.FirstName;
+    user.LastName = createWorkspaceDto.LastName;
+    user.DateOfBirth = createWorkspaceDto.DateOfBirth;
+    user.AddressLine1=createWorkspaceDto.AddressLine1;
+    user.AddressLine2 = createWorkspaceDto.AddressLine2;
+    user.PostalCode = createWorkspaceDto.PostalCode;
+    user.City = createWorkspaceDto.City;
+    user.CountryId = createWorkspaceDto.CountryId;
+    user.CompanyName = createWorkspaceDto.CompanyName;
+    user.CompanyVat = createWorkspaceDto.CompanyVat;
+    user.CompanyDataProtectionUrl = createWorkspaceDto.CompanyDataProtectionUrl;
+    user.UploadLimit = createWorkspaceDto.UploadLimit;
+    user.StripeSubscriptionId = createWorkspaceDto.StripeSubscriptionId;
+    user.StripeSessionId = createWorkspaceDto.StripeSessionId;
+    user.SubscriptionStatus = createWorkspaceDto.SubscriptionStatus;
+    user.SubscriptionEndDate = createWorkspaceDto.SubscriptionEndDate;
+    user.TrialStartOn = createWorkspaceDto.TrialStartOn;
+    user.TrialEndsOn = createWorkspaceDto.TrialEndsOn;
+    user.OwnerId = createWorkspaceDto.OwnerId;
+    user.FileId = createWorkspaceDto.FileId;
+    user.DefaultPrizeId = createWorkspaceDto.DefaultPrizeId;
+    user.HasPassword = createWorkspaceDto.HasPassword;
+    user.Password = createWorkspaceDto.Password;
+    user.Slug = createWorkspaceDto.Slug;
+    user.CreatedById = createWorkspaceDto.CreatedById;
+    user.CreatedOn = createWorkspaceDto.CreatedOn;
+    user.LastModifiedById = createWorkspaceDto.LastModifiedById;
+    user.LastModifiedOn = createWorkspaceDto.LastModifiedOn;
     return await this.workspaceRepository.save(user);
   }
 
@@ -39,12 +63,12 @@ export class VouchersService {
     return await this.workspaceRepository.findOne({ where: { Id } });
   }
 
-  async update(Id: number, updateVoucherDto: UpdateWorkspaceDto): Promise<Workspace> {
+  async update(Id: number, updateWorkspaceDto: UpdateWorkspaceDto): Promise<Workspace> {
     const voucher = await this.workspaceRepository.findOne({ where: { Id } });
     if (!voucher) {
-      throw new NotFoundException('Voucher not found');
+      throw new NotFoundException('Workspace not found');
     }
-    await this.workspaceRepository.update({ Id }, updateVoucherDto);
+    await this.workspaceRepository.update({ Id }, updateWorkspaceDto);
     return voucher;
   }
 

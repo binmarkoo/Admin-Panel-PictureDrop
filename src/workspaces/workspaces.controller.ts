@@ -1,12 +1,12 @@
 /* eslint-disable */
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { WorkspacesService } from './workspaces.service';
+import { WorkspaceService } from './workspaces.service';
 import { CreateWorkspaceDto } from './dto/create-workspace.dto';
 import { UpdateWorkspaceDto } from './dto/update-workspace.dto';
 
 @Controller('workspaces')
 export class WorkspacesController {
-  constructor(private readonly workspacesService: WorkspacesService) {}
+  constructor(private readonly workspacesService: WorkspaceService) {}
 
   @Post()
   create(@Body() createWorkspaceDto: CreateWorkspaceDto) {
@@ -28,8 +28,4 @@ export class WorkspacesController {
     return this.workspacesService.update(+id, updateWorkspaceDto);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.workspacesService.remove(+id);
-  }
 }

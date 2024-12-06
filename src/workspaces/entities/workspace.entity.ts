@@ -47,7 +47,7 @@ export class Workspace
   @Column()
   StripeSubscriptionId:string;
   @Column()
-  StripSessionId:string;
+  StripeSessionId:string;
   @Column()
   SubscriptionStatus:string;
   @Column()

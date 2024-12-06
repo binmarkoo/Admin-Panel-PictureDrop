@@ -1,16 +1,16 @@
 /* eslint-disable */
 import { Test, TestingModule } from '@nestjs/testing';
-import { WorkspacesService } from './workspaces.service';
+import { WorkspaceService } from './workspaces.service';
 
 describe('WorkspacesService', () => {
-  let service: WorkspacesService;
+  let service: WorkspaceService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [WorkspacesService],
+      providers: [WorkspaceService],
     }).compile();
 
-    service = module.get<WorkspacesService>(WorkspacesService);
+    service = module.get<WorkspaceService>(WorkspaceService);
   });
 
   it('should be defined', () => {

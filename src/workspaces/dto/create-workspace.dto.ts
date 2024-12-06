@@ -22,7 +22,7 @@ export class CreateWorkspaceDto
   CompanyDataProtectionUrl:string;
   UploadLimit:string;
   StripeSubscriptionId:string;
-  StripSessionId:string;
+  StripeSessionId:string;
   SubscriptionStatus:string;
   SubscriptionEndDate:string;
   TrialStartOn:string;
