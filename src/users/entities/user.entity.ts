@@ -10,15 +10,4 @@ export class User {
   @Column() // Specifies a regular column
   Username: string;
  
-  @Column() // Specifies a regular column
-  FirstName: string;
- 
-  @Column() // Specifies a regular column
-  LastName: string;
- 
-  @Column() // Specifies a regular column
-  Email: string;
- 
-  @Column()
-  StripeCustomerId : string;
 }

@@ -20,10 +20,7 @@ export class VouchersService {
     user.VoucherCode = createVoucherDto.VoucherCode;
     user.ValidatedOn = createVoucherDto.ValidatedOn;
     user.WorkspaceId = createVoucherDto.WorkspaceId;
-    user.WinningChallengeId = createVoucherDto.WinningChallengeId;
-    user.CreatedById = createVoucherDto.CreatedById;
-    user.CreatedOn = createVoucherDto.CreatedOn;
-    user.LastModifiedById = createVoucherDto.LastModifiedById;
+    user.CreatedOn = createVoucherDto.CreatedOn;;
     user.SubmissionId = createVoucherDto.SubmissionId;
     user.VoucherPrize = createVoucherDto.VoucherPrize;
     user.VoucherPrizeEn = createVoucherDto.VoucherPrizeEn;

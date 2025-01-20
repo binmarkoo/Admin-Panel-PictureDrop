@@ -4,8 +4,4 @@
 export class CreateUserDto {
     Id: number;
     Username: string;
-    FirstName: string;
-    LastName: string;
-    Email: string;
-    StripeCustomerId: string;
   }

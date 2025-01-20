@@ -18,40 +18,10 @@ export class WorkspaceService {
     const user = new Workspace();
     user.Id = createWorkspaceDto.Id;
     user.Name = createWorkspaceDto.Name;
-    user.NameEn = createWorkspaceDto.NameEn;
-    user.Description = createWorkspaceDto.Description;
-    user.DescriptionEn = createWorkspaceDto.DescriptionEn;
-    user.ContactUrl = createWorkspaceDto.ContactUrl;
-    user.ContactMail = createWorkspaceDto.ContactMail;
-    user.ContactPhone = createWorkspaceDto.ContactPhone;
-    user.FirstName = createWorkspaceDto.FirstName;
-    user.LastName = createWorkspaceDto.LastName;
-    user.DateOfBirth = createWorkspaceDto.DateOfBirth;
-    user.AddressLine1=createWorkspaceDto.AddressLine1;
-    user.AddressLine2 = createWorkspaceDto.AddressLine2;
-    user.PostalCode = createWorkspaceDto.PostalCode;
-    user.City = createWorkspaceDto.City;
-    user.CountryId = createWorkspaceDto.CountryId;
+    user.Description = createWorkspaceDto.Description
     user.CompanyName = createWorkspaceDto.CompanyName;
-    user.CompanyVat = createWorkspaceDto.CompanyVat;
-    user.CompanyDataProtectionUrl = createWorkspaceDto.CompanyDataProtectionUrl;
-    user.UploadLimit = createWorkspaceDto.UploadLimit;
-    user.StripeSubscriptionId = createWorkspaceDto.StripeSubscriptionId;
-    user.StripeSessionId = createWorkspaceDto.StripeSessionId;
-    user.SubscriptionStatus = createWorkspaceDto.SubscriptionStatus;
-    user.SubscriptionEndDate = createWorkspaceDto.SubscriptionEndDate;
-    user.TrialStartOn = createWorkspaceDto.TrialStartOn;
-    user.TrialEndsOn = createWorkspaceDto.TrialEndsOn;
-    user.OwnerId = createWorkspaceDto.OwnerId;
-    user.FileId = createWorkspaceDto.FileId;
-    user.DefaultPrizeId = createWorkspaceDto.DefaultPrizeId;
-    user.HasPassword = createWorkspaceDto.HasPassword;
-    user.Password = createWorkspaceDto.Password;
     user.Slug = createWorkspaceDto.Slug;
-    user.CreatedById = createWorkspaceDto.CreatedById;
-    user.CreatedOn = createWorkspaceDto.CreatedOn;
-    user.LastModifiedById = createWorkspaceDto.LastModifiedById;
-    user.LastModifiedOn = createWorkspaceDto.LastModifiedOn;
+    user.SubscriptionStatus = createWorkspaceDto.SubscriptionStatus
     return await this.workspaceRepository.save(user);
   }
 

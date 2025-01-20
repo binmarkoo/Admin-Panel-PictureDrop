@@ -15,21 +15,9 @@ export class Voucher {
  
   @Column() // Specifies a regular column
   WorkspaceId: string;
- 
-  @Column() // Specifies a regular column
-  WinningChallengeId: string;
- 
-  @Column()
-  CreatedById : string;
-
+  
   @Column()
   CreatedOn : Date;
-
-  @Column()
-  LastModifiedById : string;
-
-  @Column()
-  LastModifiedOn : Date;
   
   @Column()
   SubmissionId : string;

@@ -7,27 +7,20 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { SubmissionItem } from './entities/submission-item.entity';
 import { Repository } from 'typeorm';
 
+
 @Injectable()
 export class SubmissionItemService {
   constructor(
-    @InjectRepository(SubmissionItem) private submissionitemRepository: Repository<SubmissionItem>,
+    @InjectRepository(SubmissionItem) private submissionitemRepository: Repository<SubmissionItem>
   ) {}
   
   async create(createSubmissionItemDto: CreateSubmissionItemDto): Promise<SubmissionItem> {
     const user = new SubmissionItem();
     user.Id = createSubmissionItemDto.Id;
     user.SubmissionId = createSubmissionItemDto.SubmissionId;
-    user.FileId = createSubmissionItemDto.FileId;
-    user.ThumbnailId = createSubmissionItemDto.ThumbnailId;
-    user.Width = createSubmissionItemDto.Width;
-    user.Height = createSubmissionItemDto.Height;
-    user.ContentType = createSubmissionItemDto.ContentType;
-    user.ContentLength = createSubmissionItemDto.ContentLength;
     user.Rating = createSubmissionItemDto.Rating;
     user.Orientation = createSubmissionItemDto.Orientation;
-    user.CreatedById = createSubmissionItemDto.CreatedById;
     user.CreatedOn = createSubmissionItemDto.CreatedOn;
-    user.LastModifiedById = createSubmissionItemDto.LastModifiedById;
     user.LastModifiedOn = createSubmissionItemDto.LastModifiedOn;
     return await this.submissionitemRepository.save(user);
   }
@@ -48,5 +41,8 @@ export class SubmissionItemService {
     await this.submissionitemRepository.update({ Id }, updateSubmissionItemDto);
     return submissionItem;
   }
+
+  
+
 
 }

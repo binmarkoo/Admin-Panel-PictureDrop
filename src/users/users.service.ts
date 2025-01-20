@@ -18,10 +18,6 @@ export class UsersService {
     const user = new User();
     user.Id = createUserDto.Id;
     user.Username = createUserDto.Username;
-    user.FirstName = createUserDto.FirstName;
-    user.LastName = createUserDto.LastName;
-    user.Email = createUserDto.Email;
-    user.StripeCustomerId = createUserDto.StripeCustomerId;
     return await this.userRepository.save(user);
   }
 
