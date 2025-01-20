@@ -14,11 +14,14 @@ import { Workspace } from './workspaces/entities/workspace.entity';
 import { SubmissionItemController } from './submission-item/submission-item.controller';
 import { SubmissionItemService } from './submission-item/submission-item.service';
 import { SubmissionItem } from './submission-item/entities/submission-item.entity';
+import { SubmissionController } from './submission/submission.controller';
+import { SubmissionService } from './submission/submission.service';
+import { Submission } from './submission/entities/submission.entity';
 
 
 @Module({
-    imports: [TypeOrmModule.forFeature([User,Voucher,Workspace,SubmissionItem]), DatabaseModule], 
-    controllers: [UsersController,VouchersController,WorkspacesController,SubmissionItemController],
-    providers: [UsersService,VouchersService,WorkspaceService,SubmissionItemService],
+    imports: [TypeOrmModule.forFeature([User,Voucher,Workspace,SubmissionItem,Submission]), DatabaseModule], 
+    controllers: [UsersController,VouchersController,WorkspacesController,SubmissionItemController,SubmissionController],
+    providers: [UsersService,VouchersService,WorkspaceService,SubmissionItemService,SubmissionService],
   })
   export class MainModule {}

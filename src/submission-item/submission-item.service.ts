@@ -7,7 +7,6 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { SubmissionItem } from './entities/submission-item.entity';
 import { Repository } from 'typeorm';
 
-
 @Injectable()
 export class SubmissionItemService {
   constructor(
@@ -42,7 +41,6 @@ export class SubmissionItemService {
     return submissionItem;
   }
 
-  
 
 
 }
