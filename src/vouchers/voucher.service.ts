@@ -31,11 +31,11 @@ export class VouchersService {
     return await this.voucherRepository.find();
   }
 
-  async findOne(Id: number): Promise<Voucher> {
+  async findOne(Id: string): Promise<Voucher> {
     return await this.voucherRepository.findOne({ where: { Id } });
   }
 
-  async update(Id: number, updateVoucherDto: UpdateVoucherDto): Promise<Voucher> {
+  async update(Id: string, updateVoucherDto: UpdateVoucherDto): Promise<Voucher> {
     const voucher = await this.voucherRepository.findOne({ where: { Id } });
     if (!voucher) {
       throw new NotFoundException('Voucher not found');
@@ -44,4 +44,13 @@ export class VouchersService {
     return voucher;
   }
 
+
+  async remove(Id:string):Promise<Voucher>{
+    const voucher = await this.voucherRepository.findOne({ where: { Id } });
+    if (!voucher) {
+      throw new NotFoundException('Voucher not found');
+    }
+    await this.voucherRepository.remove(voucher);
+    return voucher;
+  }
 }

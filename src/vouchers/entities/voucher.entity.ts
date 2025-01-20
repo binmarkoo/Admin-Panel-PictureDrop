@@ -5,7 +5,7 @@ import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 @Entity("Vouchers") // Declares the class as an entity
 export class Voucher {
   @PrimaryGeneratedColumn() // Auto-incremented primary key
-  Id: number;
+  Id: string;
  
   @Column() // Specifies a regular column
   VoucherCode: string;

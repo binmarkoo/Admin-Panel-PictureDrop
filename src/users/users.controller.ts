@@ -20,12 +20,12 @@ export class UsersController {
   }
 
   @Get(':Id')
-  findOne(@Param('Id') Id: number) {
+  findOne(@Param('Id') Id: string) {
     return this.usersService.findOne(Id);
   }
 
   @Patch(':Id')
-  update(@Param('Id') Id: number, @Body() updateUserDto: UpdateUserDto) {
+  update(@Param('Id') Id: string, @Body() updateUserDto: UpdateUserDto) {
     return this.usersService.update(Id, updateUserDto);
   }
 

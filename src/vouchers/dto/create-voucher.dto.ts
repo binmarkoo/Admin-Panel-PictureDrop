@@ -2,7 +2,7 @@
 
 
 export class CreateVoucherDto {
-    Id: number;
+    Id: string;
     VoucherCode: string;
     ValidatedOn: Date;
     WorkspaceId: string;

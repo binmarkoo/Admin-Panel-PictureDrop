@@ -29,11 +29,11 @@ export class SubmissionItemService {
     return await this.submissionitemRepository.find();
   }
 
-  async findOne(Id: number): Promise<SubmissionItem> {
+  async findOne(Id: string): Promise<SubmissionItem> {
     return await this.submissionitemRepository.findOne({ where: { Id } });
   }
 
-  async update(Id: number, updateSubmissionItemDto: UpdateSubmissionItemDto): Promise<SubmissionItem> {
+  async update(Id: string, updateSubmissionItemDto: UpdateSubmissionItemDto): Promise<SubmissionItem> {
     const submissionItem = await this.submissionitemRepository.findOne({ where: { Id } });
     if (!submissionItem) {
       throw new NotFoundException('SubmissionItem not found');

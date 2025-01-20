@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 export class CreateSubmissionItemDto {
-    Id: number;
+    Id: string;
     SubmissionId: string;
     Rating: number;
     Orientation: number;

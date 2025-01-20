@@ -4,7 +4,7 @@ import { Column, Entity, JoinTable, OneToMany, OneToOne, PrimaryGeneratedColumn 
 @Entity("SubmissionItems")
 export class SubmissionItem {
     @PrimaryGeneratedColumn()
-    Id: number;
+    Id: string;
 
     @Column()
     SubmissionId: string;

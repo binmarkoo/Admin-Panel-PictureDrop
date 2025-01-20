@@ -21,12 +21,12 @@ export class SubmissionItemController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.submissionItemService.findOne(+id);
+    return this.submissionItemService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateSubmissionItemDto: UpdateSubmissionItemDto) {
-    return this.submissionItemService.update(+id, updateSubmissionItemDto);
+    return this.submissionItemService.update(id, updateSubmissionItemDto);
   }
 
 
