@@ -1,0 +1,12 @@
+<div>
+  {{value}}
+  <br>
+  {{description}}
+</div>
+<br>
+{{text}}
+<button (click)="handleClick()">Click</button>
+<br>
+@for(note of notes; track note.id){
+  <span>{{note.text}}</span>
+}

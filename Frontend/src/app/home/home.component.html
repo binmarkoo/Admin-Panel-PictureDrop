@@ -1,0 +1,31 @@
+<h1 [style.color]="toggle?'green':'red'">Title</h1>
+{{text}}
+<div [textContent]="text"></div>
+<p [class]="toggle?'class1':'class2'">{{toggle}}</p>
+<br>
+<button (click)="handleClick()">Click Me!!</button>
+<br>
+@if (toggle) {
+  <div class="container1" (click)="function1()">
+    <div class="container2" (click)="$event.stopPropagation(); function2()"></div>
+  </div>
+}
+
+@for (note of notes; track note.id) {
+  <span>{{note.text}}</span>
+  <br>
+}
+
+
+<br>
+{{userInput | uppercase}}
+<br>
+<!--<input #field1 (keyup.enter)="userInput = field1.value">-->
+<br>
+<input [(ngModel)]="userInput">
+<br>
+<a routerLink="view1">View1</a>
+<br>
+<a routerLink="view2">View2</a>
+<br>
+<router-outlet></router-outlet>
