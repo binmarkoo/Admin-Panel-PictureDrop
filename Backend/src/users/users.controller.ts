@@ -4,16 +4,24 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
+import { ApiBearerAuth, ApiBody, ApiOperation, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
 
 @Controller('users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
+
+  @ApiOperation({
+    summary:'Create new User',
+    description:'Lore'
+  })
   @Post()
   create(@Body() createUserDto: CreateUserDto) {
     return this.usersService.create(createUserDto);
   }
 
+  
+  @ApiOperation({summary:"GetAllUsers",operationId:"getAllUsers"})
   @Get()
   findAll() {
     return this.usersService.findAll();

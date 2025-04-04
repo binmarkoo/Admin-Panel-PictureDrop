@@ -1,0 +1,84 @@
+/* arbeitsbereiche-overview.component.css */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    color: #444;
+    margin: 10px 0;
+  }
+  
+  h3 {
+    font-size: 1.3rem;
+    color: #555;
+    margin: 15px 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .subsections {
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding-left: 20px;
+  }
+  
+  li {
+    margin: 5px 0;
+    padding: 3px 0;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    margin: 15px 0;
+  }
+  
+  .year-grid {
+    columns: 6;
+    column-gap: 20px;
+  }
+  
+  .year-item {
+    display: block;
+    padding: 3px 0;
+    break-inside: avoid;
+  }
+  
+  hr {
+    border: 0;
+    height: 1px;
+    background-color: #eee;
+    margin: 25px 0;
+  }
+  
+  @media (max-width: 768px) {
+    .year-grid {
+      columns: 4;
+    }
+    .grid-container {
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .year-grid {
+      columns: 3;
+    }
+    .grid-container {
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    }
+  }

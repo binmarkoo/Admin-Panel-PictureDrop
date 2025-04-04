@@ -1,0 +1,216 @@
+{
+    "openapi": "3.0.0",
+    "paths": {
+      "/api/todos": {
+        "post": {
+          "description": "Test description",
+          "operationId": "ToDoNotesController_create",
+          "parameters": [],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateToDoNoteDto"
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": ""
+            }
+          },
+          "summary": "Create new TODO",
+          "tags": [
+            "ToDo-Controller"
+          ]
+        },
+        "get": {
+          "operationId": "getAllToDos",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": ""
+            }
+          },
+          "summary": "Get all Todos",
+          "tags": [
+            "ToDo-Controller"
+          ]
+        }
+      },
+      "/api/todos/{id}": {
+        "get": {
+          "operationId": "getToDobyId",
+          "parameters": [
+            {
+              "name": "id",
+              "required": true,
+              "in": "path",
+              "description": "ToDo id",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "default": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ToDodto"
+                  }
+                }
+              }
+            }
+          },
+          "summary": "Get one ToDo",
+          "tags": [
+            "ToDo-Controller"
+          ]
+        },
+        "patch": {
+          "operationId": "UpdateToDo",
+          "parameters": [
+            {
+              "name": "id",
+              "required": true,
+              "in": "path",
+              "description": "ToDo id",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateToDoNoteDto"
+                }
+              }
+            }
+          },
+          "responses": {
+            "default": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ToDodto"
+                  }
+                }
+              }
+            }
+          },
+          "summary": "Update already existing ToDo",
+          "tags": [
+            "ToDo-Controller"
+          ]
+        },
+        "delete": {
+          "operationId": "DeleteToDo",
+          "parameters": [
+            {
+              "name": "id",
+              "required": true,
+              "in": "path",
+              "description": "ToDo id",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "default": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ToDodto"
+                  }
+                }
+              }
+            }
+          },
+          "summary": "Delete one ToDo",
+          "tags": [
+            "ToDo-Controller"
+          ]
+        }
+      }
+    },
+    "info": {
+      "title": "ToDo Api",
+      "description": "First Swagger example",
+      "version": "1.0",
+      "contact": {
+  
+      }
+    },
+    "tags": [],
+    "servers": [],
+    "components": {
+      "schemas": {
+        "CreateToDoNoteDto": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "description": "ToDo Title",
+              "example": "Punish user for null"
+            },
+            "description": {
+              "type": "string",
+              "description": "ToDo Description",
+              "example": "var was null so punish the user for it"
+            },
+            "isDone": {
+              "type": "boolean",
+              "description": "ToDo is done",
+              "example": "true"
+            }
+          },
+          "required": [
+            "title",
+            "description",
+            "isDone"
+          ]
+        },
+        "ToDodto": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "description": "ToDo Title",
+              "example": "Punish user for null"
+            },
+            "description": {
+              "type": "string",
+              "description": "ToDo Description",
+              "example": "var was null so punish the user for it"
+            },
+            "isDone": {
+              "type": "boolean",
+              "description": "ToDo is done",
+              "example": "true"
+            }
+          },
+          "required": [
+            "title",
+            "description",
+            "isDone"
+          ]
+        },
+        "UpdateToDoNoteDto": {
+          "type": "object",
+          "properties": {
+  
+          }
+        }
+      }
+    }
+  }

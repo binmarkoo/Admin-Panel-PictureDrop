@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ArbeitsbereichComponent } from './arbeitsbereich.component';
+import { ArbeitsbereicheComponent } from './arbeitsbereich.component';
 
 describe('ArbeitsbereichComponent', () => {
-  let component: ArbeitsbereichComponent;
-  let fixture: ComponentFixture<ArbeitsbereichComponent>;
+  let component: ArbeitsbereicheComponent;
+  let fixture: ComponentFixture<ArbeitsbereicheComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ArbeitsbereichComponent]
+      imports: [ArbeitsbereicheComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ArbeitsbereichComponent);
+    fixture = TestBed.createComponent(ArbeitsbereicheComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

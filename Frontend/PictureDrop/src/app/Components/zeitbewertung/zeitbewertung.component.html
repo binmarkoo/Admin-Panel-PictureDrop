@@ -1,1 +1,44 @@
-<p>zeitbewertung works!</p>
+<!-- arbeitsbereiche-overview.component.html -->
+<div class="container">
+    <div *ngFor="let section of sections" class="section">
+      <ng-container [ngSwitch]="section.type">
+        <!-- Header Section -->
+        <div *ngSwitchCase="'header'">
+          <h1>{{ section.title }}</h1>
+          <div class="subsections">
+            <h2 *ngFor="let sub of section.subs">{{ sub }}</h2>
+          </div>
+        </div>
+  
+        <!-- Regular Sections -->
+        <div *ngSwitchCase="'section'">
+          <h3>{{ section.title }}</h3>
+          <ul>
+            <li *ngFor="let item of section.items">{{ item }}</li>
+          </ul>
+        </div>
+  
+        <!-- Mixed Content Section -->
+        <div *ngSwitchCase="'mixed'">
+          <h3>{{ section.title }}</h3>
+          <div class="grid-container">
+            <div *ngFor="let item of section.items" class="grid-item">
+              {{ item }}
+            </div>
+          </div>
+        </div>
+  
+        <!-- Years Section -->
+        <div *ngSwitchCase="'years'">
+          <h3>{{ section.title }}</h3>
+          <div class="year-grid">
+            <span *ngFor="let year of section.items" class="year-item">
+              {{ year }}
+            </span>
+          </div>
+        </div>
+      </ng-container>
+  
+      <hr *ngIf="section.type !== 'years'">
+    </div>
+  </div>

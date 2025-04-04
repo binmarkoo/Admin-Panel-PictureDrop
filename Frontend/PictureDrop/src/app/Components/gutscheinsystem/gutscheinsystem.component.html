@@ -1,1 +1,27 @@
-<p>gutscheinsystem works!</p>
+<!-- arbeitsbereiche-overview.component.html -->
+<div class="overview-container">
+    <h1>Übersicht Arbeitsbereiche</h1>
+    <h2>Gutscheinsystem</h2>
+    <h2>Zeitbewertung</h2>
+  
+    <div class="sections-container">
+      <div *ngFor="let section of sections" class="section">
+        <h3>{{ section.title }}</h3>
+        <ul>
+          <li *ngFor="let item of section.items">
+            <label>
+              <input type="checkbox" [checked]="item.checked">
+              {{ item.name }}
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="totals-section">
+      <hr>
+      <p>Ges. Unclaimed: {{ totals.unclaimed }}</p>
+      <p>Ges. Claimed: {{ totals.claimed }}</p>
+      <p>Ges. Gutscheine: {{ totals.gutscheine }}</p>
+    </div>
+  </div>
