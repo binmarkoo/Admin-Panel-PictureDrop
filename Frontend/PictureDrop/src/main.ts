@@ -6,5 +6,5 @@ import { ArbeitsbereicheComponent } from './app/Components/arbeitsbereich/arbeit
 import { GutscheinsystemComponent } from './app/Components/gutscheinsystem/gutscheinsystem.component';
 import { ZeitbewertungComponent } from './app/Components/zeitbewertung/zeitbewertung.component';
 
-bootstrapApplication(ZeitbewertungComponent, appConfig)
+bootstrapApplication(LoginComponent, appConfig)
   .catch((err) => console.error(err));

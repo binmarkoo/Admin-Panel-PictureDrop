@@ -6,6 +6,6 @@ import { ArbeitsbereicheComponent } from './app/Components/arbeitsbereich/arbeit
 import { GutscheinsystemComponent } from './app/Components/gutscheinsystem/gutscheinsystem.component';
 import { ZeitbewertungComponent } from './app/Components/zeitbewertung/zeitbewertung.component';
 
-const bootstrap = () => bootstrapApplication(ZeitbewertungComponent, config);
+const bootstrap = () => bootstrapApplication(LoginComponent, config);
 
 export default bootstrap;
