@@ -5,6 +5,10 @@ body{
     margin-top: 5rem;
 }
 
+.a{
+  color: white;
+}
+
 .login-container {
     text-align: center;
     width: 300px;

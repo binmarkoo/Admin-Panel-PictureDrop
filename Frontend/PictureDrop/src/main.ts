@@ -1,10 +1,6 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { AppComponent } from './app/app.component';
-import { LoginComponent } from './app/Components/login/login.component';
-import { ArbeitsbereicheComponent } from './app/Components/arbeitsbereich/arbeitsbereich.component';
-import { GutscheinsystemComponent } from './app/Components/gutscheinsystem/gutscheinsystem.component';
-import { ZeitbewertungComponent } from './app/Components/zeitbewertung/zeitbewertung.component';
+import { MoastaComponent } from './app/Components/moasta.component';
+import { appConfig } from './app/Components/moasta.config';
 
-bootstrapApplication(LoginComponent, appConfig)
+bootstrapApplication(MoastaComponent, appConfig)
   .catch((err) => console.error(err));
