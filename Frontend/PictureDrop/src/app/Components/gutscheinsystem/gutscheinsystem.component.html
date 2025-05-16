@@ -1,27 +1,30 @@
-<!-- arbeitsbereiche-overview.component.html -->
-<div class="overview-container">
-    <h1>Übersicht Arbeitsbereiche</h1>
-    <h2>Gutscheinsystem</h2>
-    <h2>Zeitbewertung</h2>
-  
-    <div class="sections-container">
-      <div *ngFor="let section of sections" class="section">
-        <h3>{{ section.title }}</h3>
-        <ul>
-          <li *ngFor="let item of section.items">
-            <label>
-              <input type="checkbox" [checked]="item.checked">
-              {{ item.name }}
-            </label>
-          </li>
-        </ul>
+<div class="container">
+  <h1>Arbeitsbereiche</h1>
+
+  <input type="text" class="search-bar" placeholder="Arbeitsbereich suchen...">
+
+  <div id="arbeitsbereiche-container">
+    <!-- Arbeitsbereiche werden hier dynamisch eingefügt -->
+    <div class="arbeitsbereich">
+      <div class="arbeitsbereich-header">Cosmetics</div>
+      <div class="arbeitsbereich-details">
+        <span class="claimed">Claimed: 14</span>
+        <span class="unclaimed">Unclaimed: 45/Ges: 59</span>
       </div>
     </div>
-  
-    <div class="totals-section">
-      <hr>
-      <p>Ges. Unclaimed: {{ totals.unclaimed }}</p>
-      <p>Ges. Claimed: {{ totals.claimed }}</p>
-      <p>Ges. Gutscheine: {{ totals.gutscheine }}</p>
+
+    <div class="arbeitsbereich">
+      <div class="arbeitsbereich-header">Food</div>
+      <div class="arbeitsbereich-details">
+        <span class="claimed">Claimed: 95</span>
+        <span class="unclaimed">Unclaimed: 69/Ges: 164</span>
+      </div>
     </div>
   </div>
+
+  <div class="gesamt-summen">
+    <span class="gesamt-item">Ges. Unclaimed: 114</span>
+    <span class="gesamt-item">Ges. Claimed: 109</span>
+    <span class="gesamt-item">Ges. Gutscheine: 223</span>
+  </div>
+</div>

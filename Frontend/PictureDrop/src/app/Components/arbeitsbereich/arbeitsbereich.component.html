@@ -1,41 +1,41 @@
-<div class="p-6 bg-gray-100 min-h-screen">
-    <div class="bg-white p-4 rounded-lg shadow-md">
-      <ul class="flex border-b">
-        <li class="mr-4 pb-2 border-b-2 border-purple-600">Übersicht Arbeitsbereiche</li>
-        <li class="mr-4">Gutscheinsystem</li>
-        <li>Zeitbewertung</li>
-      </ul>
+<div class="container">
+  <h1>Arbeitsbereiche</h1>
+
+  <input type="text" class="search-bar" placeholder="Arbeitsbereich suchen...">
+
+  <div id="arbeitsbereiche-container">
+    <!-- Arbeitsbereiche werden hier dynamisch eingefügt -->
+    <div class="arbeitsbereich">
+      <div class="arbeitsbereich-info">
+        <div class="arbeitsbereich-name">Cosmetic</div>
+        <div class="arbeitsbereich-status status-active">Active</div>
+      </div>
+      <div class="arbeitsbereich-uploads">114</div>
     </div>
-  
-    <div class="mt-6 bg-white p-6 rounded-lg shadow-md">
-      <div class="flex justify-between items-center mb-4">
-        <h2 class="text-xl font-semibold">Arbeitsbereiche</h2>
-        <input type="text" placeholder="Suchen..." class="p-2 border rounded-lg" />
+
+    <div class="arbeitsbereich">
+      <div class="arbeitsbereich-info">
+        <div class="arbeitsbereich-name">Toys</div>
+        <div class="arbeitsbereich-status status-inactive">Inactive</div>
       </div>
-  
-      <div class="bg-gray-200 p-4 rounded-lg">
-        <div class="p-4 bg-white rounded-lg shadow mb-2 flex justify-between items-center">
-          <div>
-            <p class="font-semibold">Arbeitsbereich X</p>
-            <p class="text-sm text-gray-500">Aktiv/Inaktiv</p>
-          </div>
-          <a href="#" class="text-blue-600">Anz Arbeitsbereich Uploads</a>
-        </div>
-  
-        <div *ngFor="let bereich of arbeitsbereiche" class="p-4 bg-white rounded-lg shadow mb-2 flex justify-between items-center">
-          <div>
-            <p>{{ bereich.name }}</p>
-            <p [class.text-green-600]="bereich.status === 'Active'" [class.text-red-600]="bereich.status === 'Inactive'">{{ bereich.status }}</p>
-          </div>
-          <p class="text-blue-600">{{ bereich.uploads }}</p>
-        </div>
+      <div class="arbeitsbereich-uploads">5</div>
+    </div>
+
+    <div class="arbeitsbereich">
+      <div class="arbeitsbereich-info">
+        <div class="arbeitsbereich-name">Food</div>
+        <div class="arbeitsbereich-status status-active">Active</div>
       </div>
-  
-      <div class="mt-4 text-sm text-gray-600">
-        Ges. Arbeitsbereiche: {{ arbeitsbereiche.length }} 
-        <span class="text-green-600">Ges. Active: {{ activeCount }}</span> 
-        <span class="text-red-600">Ges. Inactive: {{ inactiveCount }}</span>
-        <span class="text-blue-600">Ges. Uploads: {{ totalUploads }}</span>
-      </div>
+      <div class="arbeitsbereich-uploads">269</div>
     </div>
   </div>
+
+  <div class="divider"></div>
+
+  <div class="gesamt-summen">
+    <div class="gesamt-item"><strong>Ges. Arbeitsbereiche:</strong> <span id="total-bereiche">3</span></div>
+    <div class="gesamt-item"><strong>Ges. Active:</strong> <span id="total-active">2</span></div>
+    <div class="gesamt-item"><strong>Ges. Inactive:</strong> <span id="total-inactive">1</span></div>
+    <div class="gesamt-item"><strong>Ges. Uploads:</strong> <span id="total-uploads">388</span></div>
+  </div>
+</div>

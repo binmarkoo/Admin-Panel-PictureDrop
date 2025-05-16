@@ -4,7 +4,7 @@ import { LoginComponent } from './login/login.component';
 
 @Component({
   selector: 'app-moasta',
-  imports: [LoginComponent],
+  imports: [LoginComponent, RouterOutlet],
   templateUrl: './moasta.component.html',
   styleUrl: './moasta.component.css'
 })
