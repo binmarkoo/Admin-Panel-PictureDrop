@@ -5,7 +5,7 @@ import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 export class Workspace 
 {
   @PrimaryGeneratedColumn()
-  Id:number;
+  Id:string;
   @Column()
   Name:string;
   @Column()

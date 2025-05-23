@@ -29,11 +29,11 @@ export class WorkspaceService {
     return await this.workspaceRepository.find();
   }
 
-  async findOne(Id: number): Promise<Workspace> {
+  async findOne(Id: string): Promise<Workspace> {
     return await this.workspaceRepository.findOne({ where: { Id } });
   }
 
-  async update(Id: number, updateWorkspaceDto: UpdateWorkspaceDto): Promise<Workspace> {
+  async update(Id: string, updateWorkspaceDto: UpdateWorkspaceDto): Promise<Workspace> {
     const voucher = await this.workspaceRepository.findOne({ where: { Id } });
     if (!voucher) {
       throw new NotFoundException('Workspace not found');

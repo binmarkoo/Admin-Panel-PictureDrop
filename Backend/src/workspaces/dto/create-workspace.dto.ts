@@ -1,7 +1,7 @@
 /* eslint-disable */
 export class CreateWorkspaceDto 
 {
-  Id:number;
+  Id:string;
   Name:string;
   CompanyName:string;
   Slug:string;

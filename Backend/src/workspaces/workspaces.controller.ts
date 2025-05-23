@@ -20,12 +20,12 @@ export class WorkspacesController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.workspacesService.findOne(+id);
+    return this.workspacesService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateWorkspaceDto: UpdateWorkspaceDto) {
-    return this.workspacesService.update(+id, updateWorkspaceDto);
+    return this.workspacesService.update(id, updateWorkspaceDto);
   }
 
 }
