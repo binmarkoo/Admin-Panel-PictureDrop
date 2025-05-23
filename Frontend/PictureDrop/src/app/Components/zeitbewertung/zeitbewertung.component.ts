@@ -1,65 +1,91 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { Chart, registerables } from 'chart.js';
+import { NavbarComponent } from '../navbar/navbar.component';
+import { FormsModule } from '@angular/forms';
+
+type YearKey = '2024' | '2023' | '2022';
+
+interface ChartYearData {
+  labels: string[];
+  values: number[];
+  references: string[];
+}
 
 @Component({
+  standalone: true,
   selector: 'app-zeitbewertung',
-  imports:[CommonModule],
+  imports: [NavbarComponent, FormsModule],
   templateUrl: './zeitbewertung.component.html',
   styleUrls: ['./zeitbewertung.component.css']
 })
-export class ZeitbewertungComponent {
-  sections = [
-    {
-      type: 'header',
-      title: 'Übersicht Arbeitsbereiche',
-      subs: ['Gutscheinsystem', 'Zeitbewertung']
+export class ZeitbewertungComponent implements OnInit {
+  currentArbeitsbereich = 'Arbeitsbereich 1';
+  yearChart!: Chart;
+  selectedYear: YearKey = '2024';
+
+  chartData: Record<YearKey, ChartYearData> = {
+    "2024": {
+      labels: ["Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"],
+      values: [2100, 1900, 1700, 1500, 1300, 1100, 900, 700, 500, 300, 100, 50],
+      references: ["R12", "R16", "R17", "R18", "R19", "R20", "R21", "R22", "R23", "R24", "R25", "R26"]
     },
-    {
-      type: 'section',
-      title: 'Arbeitsbereich 1',
-      items: ['Arbeitsbereich 2', 'Arbeitsbereich 3']
+    "2023": {
+      labels: ["Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"],
+      values: [1800, 1600, 1400, 1200, 1000, 800, 600, 400, 200, 100, 50, 25],
+      references: ["R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10", "R11", "R12"]
     },
-    {
-      type: 'mixed',
-      title: 'Arbeitsbereich 1',
-      items: [
-        '2024 ©',
-        ...['100%', '120%', '160%', '180%', '110%', '90%', '70%', '50%'],
-        ...['January', 'February', 'March', 'May', 'June', 'July',
-           'August', 'September', 'October', 'November', 'December']
-      ]
-    },
-    {
-      type: 'years',
-      title: 'Zentrum',
-      items: this.generateYearRange()
+    "2022": {
+      labels: ["Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"],
+      values: [1500, 1300, 1100, 900, 700, 500, 300, 100, 50, 25, 10, 5],
+      references: ["R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10", "R11", "R12"]
     }
+  };
+
+  arbeitsbereiche = [
+    "Arbeitsbereich 1",
+    "Arbeitsbereich 2",
+    "Arbeitsbereich 3"
   ];
 
-  private generateYearRange(): string[] {
-    const years = [];
-    let year = 2024;
-    const maxYear = 7000;
-    
-    while (year <= maxYear) {
-      years.push(year.toString());
-      // Add irregular increments
-      year += this.getYearIncrement(year);
-    }
-    
-    return this.addDuplicates(years);
+  ngOnInit(): void {
+    Chart.register(...registerables);
+    this.initChart();
   }
 
-  private getYearIncrement(currentYear: number): number {
-    if (currentYear > 5000) return Math.floor(Math.random() * 50) + 10;
-    if (currentYear > 3000) return Math.floor(Math.random() * 20) + 5;
-    return Math.floor(Math.random() * 10) + 1;
-  }
-
-  private addDuplicates(years: string[]): string[] {
-    return years.map(year => {
-      if (Math.random() < 0.05) return `${year}\n${year}`; // 5% chance of duplicate
-      return year;
+  initChart(): void {
+    const ctx = document.getElementById('yearChart') as HTMLCanvasElement;
+    this.yearChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: this.chartData[this.selectedYear].labels,
+        datasets: [{
+          label: 'Wert pro Monat',
+          data: this.chartData[this.selectedYear].values,
+          backgroundColor: 'rgba(54, 162, 235, 0.7)',
+          borderColor: 'rgba(54, 162, 235, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
     });
+  }
+
+  changeYear(year: YearKey): void {
+    this.selectedYear = year;
+    this.yearChart.data.labels = this.chartData[year].labels;
+    this.yearChart.data.datasets[0].data = this.chartData[year].values;
+    this.yearChart.update();
+  }
+
+  selectArbeitsbereich(bereich: string): void {
+    this.currentArbeitsbereich = bereich;
   }
 }

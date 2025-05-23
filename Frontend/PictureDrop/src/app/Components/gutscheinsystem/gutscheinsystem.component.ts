@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { callbackify } from 'node:util';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-gutschein',
-  imports:[CommonModule],
+  imports:[CommonModule, NavbarComponent],
   templateUrl: './gutscheinsystem.component.html',
   styleUrls: ['./gutscheinsystem.component.css']
 })

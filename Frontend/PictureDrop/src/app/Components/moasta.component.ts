@@ -5,7 +5,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 
 @Component({
   selector: 'app-moasta',
-  imports: [LoginComponent, RouterOutlet, NavbarComponent],
+  imports: [LoginComponent, RouterOutlet],
   templateUrl: './moasta.component.html',
   styleUrl: './moasta.component.css'
 })

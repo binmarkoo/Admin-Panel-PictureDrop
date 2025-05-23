@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-arbeitsbereich',
+  imports: [NavbarComponent],
   templateUrl: './arbeitsbereich.component.html',
   styleUrls: ['./arbeitsbereich.component.css']
 })

@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "generate-api":"ng-openapi-gen --input files/openapi.json --output libs/src/app/api",
+    "generate-api": "ng-openapi-gen --input files/openapi.json --output libs/src/app/api",
     "serve:ssr:PictureDrop": "node dist/picture-drop/server/server.mjs"
   },
   "private": true,
@@ -21,6 +21,8 @@
     "@angular/platform-server": "^19.2.0",
     "@angular/router": "^19.2.0",
     "@angular/ssr": "^19.2.3",
+    "@types/chart.js": "^4.0.1",
+    "chart.js": "^4.4.9",
     "express": "^4.18.2",
     "ng-openapi-gen": "^0.52.0",
     "rxjs": "~7.8.0",

@@ -1,21 +1,23 @@
+<app-navbar></app-navbar>
+
 <div class="container">
   <div class="header">
     <div class="dropdown">
       <button class="dropdown-btn">☰</button>
       <div class="dropdown-content">
-        <a href="#">Arbeitsbereich 1</a>
-        <a href="#">Arbeitsbereich 2</a>
-        <a href="#">Arbeitsbereich 3</a>
-        <!-- Weitere Arbeitsbereiche können hier hinzugefügt werden -->
+        <a *ngFor="let bereich of arbeitsbereiche" href="#"
+          (click)="selectArbeitsbereich(bereich); $event.preventDefault()">
+          {{ bereich }}
+        </a>
       </div>
     </div>
-    <h1 id="current-arbeitsbereich">Arbeitsbereich 1</h1>
+    <h1 id="current-arbeitsbereich">{{ currentArbeitsbereich }}</h1>
   </div>
 
   <div class="chart-container">
     <div class="chart-header">
       <h2>Jahresübersicht</h2>
-      <select class="year-selector" id="year-selector">
+      <select class="year-selector" [(ngModel)]="selectedYear" (change)="changeYear(selectedYear)">
         <option value="2024">2024</option>
         <option value="2023">2023</option>
         <option value="2022">2022</option>
@@ -35,8 +37,12 @@
         <th>Referenz</th>
       </tr>
     </thead>
-    <tbody id="data-table-body">
-      <!-- Daten werden dynamisch eingefügt -->
+    <tbody>
+      <tr *ngFor="let month of chartData[selectedYear].labels; let i = index">
+        <td>{{ month }}</td>
+        <td>{{ chartData[selectedYear].values[i] }}</td>
+        <td>{{ chartData[selectedYear].references[i] }}</td>
+      </tr>
     </tbody>
   </table>
 </div>
