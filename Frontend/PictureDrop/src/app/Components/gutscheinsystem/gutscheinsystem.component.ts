@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { callbackify } from 'node:util';
 
 @Component({
   selector: 'app-gutschein',
@@ -8,25 +9,27 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./gutscheinsystem.component.css']
 })
 export class GutscheinsystemComponent {
-  sections = [
+  selection = [
     {
-      title: 'Arbeitsbereiche',
-      items: [
-        { name: 'Arbeitsbereich X', checked: false },
-        { name: 'Claimed: X / Unclaimed: V/ces:Z', checked: false }
-      ]
+      title: 'Lore',
+      id:1,
+      claimed: 14,
+      unclaimed:18,
+      ges:14+18
     },
     {
       title: 'Cosmetics',
-      items: [
-        { name: 'Claimed: I4 / Unclaimed: 45/ces: 59', checked: false }
-      ]
+      id:2,
+      claimed: 16,
+      unclaimed: 27,
+      ges:16+27
     },
     {
       title: 'Food',
-      items: [
-        { name: 'Claimed: 95 / Unclaimed: 69/ces: 164', checked: false }
-      ]
+      id:3,
+      claimed:8,
+      unclaimed:2,
+      ges:8+2
     }
   ];
 

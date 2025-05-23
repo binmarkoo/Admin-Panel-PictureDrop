@@ -5,28 +5,20 @@
 
   <div id="arbeitsbereiche-container">
     <!-- Arbeitsbereiche werden hier dynamisch eingefügt -->
-    <div class="arbeitsbereich">
-      <div class="arbeitsbereich-header">Cosmetics</div>
+  @for(select of selection; track select.id){
+      <div class="arbeitsbereich">
+      <div class="arbeitsbereich-header">{{select.title}}</div>
       <div class="arbeitsbereich-details">
-        <span class="claimed">Claimed: 14</span>
-        <span class="unclaimed">Unclaimed: 45</span>
-        <span class="total">Ges: 59</span>
+        <span class="claimed">Claimed: {{select.claimed}}</span>
+        <span class="unclaimed">Unclaimed: {{select.unclaimed}}</span>
+        <span class="total">Ges: {{select.ges}}</span>
       </div>
     </div>
-
-    <div class="arbeitsbereich">
-      <div class="arbeitsbereich-header">Food</div>
-      <div class="arbeitsbereich-details">
-        <span class="claimed">Claimed: 95</span>
-        <span class="unclaimed">Unclaimed: 69</span>
-        <span class="total">Ges: 164</span>
-      </div>
-    </div>
-  </div>
-
+    }
+  
   <div class="gesamt-summen">
-    <span class="gesamt-item">Ges. Unclaimed: 114</span>
-    <span class="gesamt-item">Ges. Claimed: 109</span>
-    <span class="gesamt-item">Ges. Gutscheine: 223</span>
+    <span class="gesamt-item">Ges. Unclaimed: {{totals.unclaimed}}</span>
+    <span class="gesamt-item">Ges. Claimed: {{totals.claimed}}</span>
+    <span class="gesamt-item">Ges. Gutscheine: {{totals.gutscheine}}</span>
   </div>
 </div>
