@@ -92,10 +92,3 @@ Admin-Panel-PictureDrop/
 
 ---
 
-<div align="center">
-
-*🔒 UNLICENSED — Private Project. All rights reserved.*
-
-*Alles im Griff. 💪*
-
-</div>
